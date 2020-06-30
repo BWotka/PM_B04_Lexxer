@@ -3,6 +3,11 @@ package lexer;
 import java.util.regex.Pattern;
 
 @Prio(value = 2)
+/**
+ * 
+ * @author Benedikt Wotka
+ *
+ */
 public class StringContent extends Token {
 
   public StringContent() {

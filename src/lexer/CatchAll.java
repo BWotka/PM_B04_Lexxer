@@ -1,6 +1,11 @@
 package lexer;
 
 @Catch_All
+/**
+ * 
+ * @author Benedikt Wotka
+ *
+ */
 public class CatchAll extends Token {
   private String content;
 

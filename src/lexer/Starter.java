@@ -15,7 +15,11 @@ import java.util.logging.Logger;
 
 import lexer.Catch_All;
 import lexer.Prio;
-
+/**
+ * 
+ * @author Benedikt Wotka, David Nickel
+ *
+ */
 public class Starter {
   public static void main(String[] args)
       throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
@@ -81,11 +85,6 @@ public class Starter {
       Constructor<?> ctorCatch = catchClass.getConstructor();
       lexer.registerCatchAll((Token) ctorCatch.newInstance());
     }
-
-    /*boolean a = catchClass.isAnnotationPresent(Catch_All.class);
-    Annotation b = catchClass.getAnnotation(Prio.class);
-    System.out.println(a);
-    System.out.println(b);*/
 
     List<Token> tokensFromString = new ArrayList<>();
     tokensFromString = lexer.tokenize("public void // test \n 'test'");

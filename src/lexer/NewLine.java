@@ -1,6 +1,11 @@
 package lexer;
 
 @Prio(value = 3)
+/**
+ * 
+ * @author Benedikt Wotka
+ *
+ */
 public class NewLine extends Token {
 
   public NewLine() {

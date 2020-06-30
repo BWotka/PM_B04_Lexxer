@@ -1,6 +1,11 @@
 package lexer;
 
 @Prio(value = 1)
+/**
+ * 
+ * @author Benedikt Wotka
+ *
+ */
 public class Comment extends Token {
   public Comment() {
     super("//.*$");
