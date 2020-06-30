@@ -1,5 +1,6 @@
 package lexer;
 
+@Catch_All
 public class CatchAll extends Token {
   private String content;
 

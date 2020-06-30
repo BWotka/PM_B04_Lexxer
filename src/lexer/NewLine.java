@@ -1,5 +1,6 @@
 package lexer;
 
+@Prio(value = 3)
 public class NewLine extends Token {
 
   public NewLine() {

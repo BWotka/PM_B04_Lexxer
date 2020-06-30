@@ -1,5 +1,6 @@
 package lexer;
 
+@Prio(value = 2)
 public class KeyWord extends Token {
 
   public KeyWord() {

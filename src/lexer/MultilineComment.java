@@ -1,5 +1,6 @@
 package lexer;
 
+@Prio(value = 1)
 public class MultilineComment extends Token {
 
   public MultilineComment() {

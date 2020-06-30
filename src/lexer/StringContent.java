@@ -2,6 +2,7 @@ package lexer;
 
 import java.util.regex.Pattern;
 
+@Prio(value = 2)
 public class StringContent extends Token {
 
   public StringContent() {
