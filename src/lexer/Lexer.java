@@ -52,7 +52,7 @@ public class Lexer {
   private Token testTokens(String toToken) {
     for (Token t : token) {
       if (t.match(toToken) != null) {
-        return t;
+        return t.getToken();
       }
     }
     return catchAll.match(toToken);
