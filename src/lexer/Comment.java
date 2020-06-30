@@ -7,6 +7,7 @@ public class Comment extends Token {
 
   @Override
   protected Token getToken() {
+    super.lexerLog.info("Token " + this.getClass().getName() + " was used.");
     return this;
   }
 
