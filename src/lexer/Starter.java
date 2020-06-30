@@ -88,9 +88,9 @@ public class Starter {
     System.out.println(b);*/
 
     List<Token> tokensFromString = new ArrayList<>();
-    tokensFromString = lexer.tokenize("public void // test \n 'test'");
+    tokensFromString = lexer.tokenize("//test \n hallo void");
     for (Token t : tokensFromString) {
-      System.out.print(t.getContent());
+      System.out.print(t.getContent() + "|");
     }
   }
 }

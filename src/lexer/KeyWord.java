@@ -6,7 +6,7 @@ import java.security.Key;
 public class KeyWord extends Token {
 
   public KeyWord() {
-    super("(public|private|protected|abstract|void)");
+    super("^(public|private|protected|abstract|void)");
   }
 
   public KeyWord(KeyWord oldKW) {

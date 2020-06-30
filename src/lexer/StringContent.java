@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class StringContent extends Token {
 
   public StringContent() {
-    super(" (([\"|\']).*\\2)?");
+    super("(([\"|\']).*\\2)");
   }
 
   public StringContent(StringContent oldSC) {

@@ -4,7 +4,7 @@ package lexer;
 public class NewLine extends Token {
 
   public NewLine() {
-    super("\\n");
+    super("^\\n");
   }
 
   public NewLine(NewLine oldNL) {

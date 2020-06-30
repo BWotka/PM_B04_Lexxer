@@ -5,7 +5,7 @@ public class CatchAll extends Token {
   private String content;
 
   public CatchAll() {
-    super(".");
+    super("^.");
   }
 
   public CatchAll(CatchAll oldCA) {
