@@ -11,6 +11,7 @@ import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import lexer.Catch_All;
 import lexer.Prio;
@@ -19,60 +20,77 @@ public class Starter {
   public static void main(String[] args)
       throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
           InstantiationException, ClassNotFoundException, MalformedURLException {
+
     Lexer lexer = new Lexer();
-    
+    Logger lexLog = Logger.getLogger("LexLogging");
+
+    // path of token classes
     File folder = new File("./src");
     URL[] ua = new URL[] {folder.toURI().toURL()};
     URLClassLoader ucl = URLClassLoader.newInstance(ua);
+
+    // Lists of Tokens, sorted by Prio
     List<Token> tokenPrio1 = new ArrayList<>();
     List<Token> tokenPrio2 = new ArrayList<>();
     List<Token> tokenPrio3 = new ArrayList<>();
+    // List of Tokens read in
+    List<Token> tokenClasses = new ArrayList<>();
+
     Class<?> commentClass = ucl.loadClass("lexer.Comment");
-    int prio = commentClass.getAnnotation(Prio.class).value();
-    Class<?>[] paramT = new Class<?>[] {};
-    Method method = commentClass.getMethod("getToken", paramT);
-    /*if (prio == 1) {
-      tokenPrio1.append();
-    }else if(prio == 2) {
-      tokenPrio2.append();
-    }else if (prio ==3) {
-      tokenPrio3.append();
-    }*/
-    Class<?> keyWordClass = ucl.loadClass("lexer.Comment");
-    prio = keyWordClass.getAnnotation(Prio.class).value();
-    Class<?> multilineCommentClass = ucl.loadClass("lexer.Comment");
-    prio = multilineCommentClass.getAnnotation(Prio.class).value();
-    Class<?> newLineClass = ucl.loadClass("lexer.Comment");
-    prio = newLineClass.getAnnotation(Prio.class).value();
-    Class<?> stringContentClass = ucl.loadClass("lexer.Comment");
-    prio = stringContentClass.getAnnotation(Prio.class).value();
-    List<Token> tokenSortPrio = new ArrayList<>();
+    Class<?> keyWordClass = ucl.loadClass("lexer.KeyWord");
+    Class<?> multilineCommentClass = ucl.loadClass("lexer.MultilineComment");
+    Class<?> newLineClass = ucl.loadClass("lexer.NewLine");
+    Class<?> stringContentClass = ucl.loadClass("lexer.StringContent");
 
-    
+    Constructor<?> ctorComment = commentClass.getConstructor();
+    Constructor<?> ctorKeyWord = keyWordClass.getConstructor();
+    Constructor<?> ctorMultiLine = multilineCommentClass.getConstructor();
+    Constructor<?> ctorNewLine = newLineClass.getConstructor();
+    Constructor<?> ctorStringCont = stringContentClass.getConstructor();
+
+    tokenClasses.add((Token) ctorComment.newInstance());
+    tokenClasses.add((Token) ctorKeyWord.newInstance());
+    tokenClasses.add((Token) ctorMultiLine.newInstance());
+    tokenClasses.add((Token) ctorNewLine.newInstance());
+    tokenClasses.add((Token) ctorStringCont.newInstance());
+
+    int prio;
+    for (Token loadingClass : tokenClasses) {
+      prio = loadingClass.getClass().getAnnotation(Prio.class).value();
+      switch (prio) {
+        case 1:
+          tokenPrio1.add(loadingClass);
+          break;
+        case 2:
+          tokenPrio2.add(loadingClass);
+          break;
+        case 3:
+          tokenPrio3.add(loadingClass);
+          break;
+        default:
+          lexLog.warning("Problem with sorting token by priority");
+      }
+    }
     // Token classen nach @Prio geordnet einfügen
-
-    lexer.registerToken(tokenSortPrio);
-
-    // loading the CatchAll Class from Path
-    //File folder = new File("./src");
-    //URL[] ua = new URL[] {folder.toURI().toURL()};
-    //URLClassLoader ucl = URLClassLoader.newInstance(ua);
+    lexer.registerToken(tokenPrio1);
+    lexer.registerToken(tokenPrio2);
+    lexer.registerToken(tokenPrio3);
 
     Class<?> catchClass = ucl.loadClass("lexer.CatchAll");
     if (catchClass.isAnnotationPresent(Catch_All.class)) {
-      
+      Constructor<?> ctorCatch = catchClass.getConstructor();
+      lexer.registerCatchAll((Token) ctorCatch.newInstance());
     }
+
     /*boolean a = catchClass.isAnnotationPresent(Catch_All.class);
     Annotation b = catchClass.getAnnotation(Prio.class);
     System.out.println(a);
     System.out.println(b);*/
-    Constructor<?> ctorCatch = catchClass.getConstructor();
-    lexer.registerCatchAll((Token) ctorCatch.newInstance());
 
     List<Token> tokensFromString = new ArrayList<>();
     tokensFromString = lexer.tokenize("public void // test \n ");
     for (Token t : tokensFromString) {
-      System.out.println(t.getContent());
+      System.out.print(t.getContent());
     }
   }
 }
