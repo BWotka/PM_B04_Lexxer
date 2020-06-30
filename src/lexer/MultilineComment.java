@@ -7,10 +7,16 @@ public class MultilineComment extends Token {
     super("/\\*(.|[\\r\\n])*?\\*/");
   }
 
+  public MultilineComment(MultilineComment oldMCom) {
+    this();
+    super.content = oldMCom.getContent();
+  }
+
   @Override
   protected Token getToken() {
     super.lexerLog.info("Token " + this.getClass().getName() + " was used.");
-    return this;
+    Token newMCom = new MultilineComment(this);
+    return newMCom;
   }
 
   @Override

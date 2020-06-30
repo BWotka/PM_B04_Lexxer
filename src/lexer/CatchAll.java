@@ -8,10 +8,16 @@ public class CatchAll extends Token {
     super(".");
   }
 
+  public CatchAll(CatchAll oldCA) {
+    this();
+    super.content = oldCA.getContent();
+  }
+
   @Override
   protected Token getToken() {
     super.lexerLog.info("Token " + this.getClass().getName() + " was used.");
-    return this;
+    Token newCA = new CatchAll(this);
+    return newCA;
   }
 
   @Override

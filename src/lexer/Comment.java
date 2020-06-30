@@ -6,10 +6,16 @@ public class Comment extends Token {
     super("//.*$");
   }
 
+  public Comment(Comment oldCom) {
+    this();
+    super.content = oldCom.getContent();
+  }
+
   @Override
   protected Token getToken() {
     super.lexerLog.info("Token " + this.getClass().getName() + " was used.");
-    return this;
+    Token newCom = new Comment(this);
+    return newCom;
   }
 
   @Override

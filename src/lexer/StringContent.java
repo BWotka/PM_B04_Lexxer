@@ -9,10 +9,16 @@ public class StringContent extends Token {
     super(" (([\"|\']).*\\2)?");
   }
 
+  public StringContent(StringContent oldSC) {
+    this();
+    super.content = oldSC.getContent();
+  }
+
   @Override
   protected Token getToken() {
     super.lexerLog.info("Token " + this.getClass().getName() + " was used.");
-    return this;
+    Token newSC = new StringContent(this);
+    return newSC;
   }
 
   @Override
