@@ -3,7 +3,11 @@ package lexer;
 import java.util.regex.Pattern;
 
 @Prio(value = 1)
-/** @author Benedikt Wotka */
+/**
+ * High priority token, recognizes multi line comments
+ *
+ * @author Benedikt Wotka
+ */
 public class MultilineComment extends Token {
 
   private String content;
@@ -13,6 +17,11 @@ public class MultilineComment extends Token {
     pattern = Pattern.compile("^/\\*(.|[\\r\\n])*?\\*/");
   }
 
+  /**
+   * Copy Constructor, creates a new Token with the same values
+   *
+   * @param oldMCom original Token
+   */
   public MultilineComment(MultilineComment oldMCom) {
     this();
     content = oldMCom.getContent();

@@ -3,7 +3,11 @@ package lexer;
 import java.util.regex.Pattern;
 
 @Prio(value = 2)
-/** @author Benedikt Wotka */
+/**
+ * medium priority token, recognizes typical java keywords
+ *
+ * @author Benedikt Wotka
+ */
 public class KeyWord extends Token {
 
   private String content;
@@ -13,6 +17,11 @@ public class KeyWord extends Token {
     pattern = Pattern.compile("^(public|private|protected|abstract|void)");
   }
 
+  /**
+   * Copy Constructor, creates a new Token with the same values
+   *
+   * @param oldKW original Token
+   */
   public KeyWord(KeyWord oldKW) {
     this();
     content = oldKW.getContent();

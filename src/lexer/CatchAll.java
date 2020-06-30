@@ -3,7 +3,11 @@ package lexer;
 import java.util.regex.Pattern;
 
 @Catch_All
-/** @author Benedikt Wotka */
+/**
+ * Low priority token, used when no other token matches
+ *
+ * @author Benedikt Wotka
+ */
 public class CatchAll extends Token {
   private String content;
 
@@ -12,6 +16,11 @@ public class CatchAll extends Token {
     pattern = Pattern.compile("^.");
   }
 
+  /**
+   * Copy Constructor, creates a new Token with the same values
+   *
+   * @param oldCA original Token
+   */
   public CatchAll(CatchAll oldCA) {
     this();
     content = oldCA.getContent();

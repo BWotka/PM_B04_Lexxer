@@ -3,7 +3,11 @@ package lexer;
 import java.util.regex.Pattern;
 
 @Prio(value = 2)
-/** @author Benedikt Wotka */
+/**
+ * medium priority token, recognizes string content
+ *
+ * @author Benedikt Wotka
+ */
 public class StringContent extends Token {
 
   private String content;
@@ -13,6 +17,11 @@ public class StringContent extends Token {
     pattern = Pattern.compile("^(([\"|\']).*\\2)");
   }
 
+  /**
+   * Copy Constructor, creates a new Token with the same values
+   *
+   * @param oldSC original Token
+   */
   public StringContent(StringContent oldSC) {
     this();
     content = oldSC.getContent();

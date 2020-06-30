@@ -3,7 +3,11 @@ package lexer;
 import java.util.regex.Pattern;
 
 @Prio(value = 1)
-/** @author Benedikt Wotka */
+/**
+ * High priority token, recognizes single line comments
+ *
+ * @author Benedikt Wotka
+ */
 public class Comment extends Token {
   private String content;
 
@@ -12,6 +16,11 @@ public class Comment extends Token {
     pattern = Pattern.compile("^//.*($|\\n)");
   }
 
+  /**
+   * Copy Constructor, creates a new Token with the same values
+   *
+   * @param oldCom original Token
+   */
   public Comment(Comment oldCom) {
     this();
     content = oldCom.getContent();

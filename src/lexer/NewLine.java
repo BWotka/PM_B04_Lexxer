@@ -3,7 +3,11 @@ package lexer;
 import java.util.regex.Pattern;
 
 @Prio(value = 3)
-/** @author Benedikt Wotka */
+/**
+ * low priority Token, recognizes new line characters
+ *
+ * @author Benedikt Wotka
+ */
 public class NewLine extends Token {
 
   private String content;
@@ -13,6 +17,11 @@ public class NewLine extends Token {
     pattern = Pattern.compile("^\\n");
   }
 
+  /**
+   * Copy Constructor, creates a new Token with the same values
+   *
+   * @param oldNL original Token
+   */
   public NewLine(NewLine oldNL) {
     this();
     content = oldNL.getContent();
