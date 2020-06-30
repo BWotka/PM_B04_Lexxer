@@ -3,6 +3,11 @@ package lexer;
 import java.security.Key;
 
 @Prio(value = 2)
+/**
+ * 
+ * @author Benedikt Wotka
+ *
+ */
 public class KeyWord extends Token {
 
   public KeyWord() {

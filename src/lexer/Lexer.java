@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
-
+/**
+ * 
+ * @author Benedikt Wotka
+ *
+ */
 public class Lexer {
+
   private List<Token> token;
   private Token catchAll;
 
