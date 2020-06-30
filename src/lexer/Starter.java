@@ -15,7 +15,11 @@ import java.util.logging.Logger;
 
 import lexer.Catch_All;
 import lexer.Prio;
-/** @author Benedikt Wotka, David Nickel */
+/**
+ * Setup Class to start the lexer.
+ *
+ * @author Benedikt Wotka, David Nickel
+ */
 public class Starter {
   public static void main(String[] args)
       throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
