@@ -83,7 +83,7 @@ public class Starter {
     }
 
     List<Token> tokensFromString = new ArrayList<>();
-    tokensFromString = lexer.tokenize("protected //test \n //hallo \n void");
+    tokensFromString = lexer.tokenize("// prima kommentar public \n protected 'test'");
     for (Token t : tokensFromString) {
       System.out.print(t.getContent() + "|");
     }
