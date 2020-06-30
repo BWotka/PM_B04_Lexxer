@@ -1,5 +1,7 @@
 package lexer;
 
+import java.util.regex.Pattern;
+
 @Prio(value = 2)
 /** @author Benedikt Wotka */
 public class StringContent extends Token {
@@ -7,7 +9,8 @@ public class StringContent extends Token {
   private String content;
 
   public StringContent() {
-    super("^(([\"|\']).*\\2)");
+    super();
+    pattern = Pattern.compile("^(([\"|\']).*\\2)");
   }
 
   public StringContent(StringContent oldSC) {

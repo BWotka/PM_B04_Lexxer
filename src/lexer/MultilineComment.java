@@ -1,5 +1,7 @@
 package lexer;
 
+import java.util.regex.Pattern;
+
 @Prio(value = 1)
 /** @author Benedikt Wotka */
 public class MultilineComment extends Token {
@@ -7,7 +9,8 @@ public class MultilineComment extends Token {
   private String content;
 
   public MultilineComment() {
-    super("^/\\*(.|[\\r\\n])*?\\*/");
+    super();
+    pattern = Pattern.compile("^/\\*(.|[\\r\\n])*?\\*/");
   }
 
   public MultilineComment(MultilineComment oldMCom) {

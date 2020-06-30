@@ -1,12 +1,15 @@
 package lexer;
 
+import java.util.regex.Pattern;
+
 @Catch_All
 /** @author Benedikt Wotka */
 public class CatchAll extends Token {
   private String content;
 
   public CatchAll() {
-    super("^.");
+    super();
+    pattern = Pattern.compile("^.");
   }
 
   public CatchAll(CatchAll oldCA) {

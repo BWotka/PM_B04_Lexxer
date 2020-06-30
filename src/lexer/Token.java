@@ -10,8 +10,8 @@ public abstract class Token {
   protected Matcher matcher;
   Logger lexerLog;
 
-  public Token(String regExp) {
-    pattern = Pattern.compile(regExp);
+  public Token() {
+
     lexerLog = Logger.getLogger("LexLogging");
   }
 

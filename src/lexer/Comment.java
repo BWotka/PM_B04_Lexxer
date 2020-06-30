@@ -1,12 +1,15 @@
 package lexer;
 
+import java.util.regex.Pattern;
+
 @Prio(value = 1)
 /** @author Benedikt Wotka */
 public class Comment extends Token {
   private String content;
 
   public Comment() {
-    super("^//.*($|\\n)");
+    super();
+    pattern = Pattern.compile("^//.*($|\\n)");
   }
 
   public Comment(Comment oldCom) {

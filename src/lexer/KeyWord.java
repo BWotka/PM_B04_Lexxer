@@ -1,5 +1,7 @@
 package lexer;
 
+import java.util.regex.Pattern;
+
 @Prio(value = 2)
 /** @author Benedikt Wotka */
 public class KeyWord extends Token {
@@ -7,7 +9,8 @@ public class KeyWord extends Token {
   private String content;
 
   public KeyWord() {
-    super("^(public|private|protected|abstract|void)");
+    super();
+    pattern = Pattern.compile("^(public|private|protected|abstract|void)");
   }
 
   public KeyWord(KeyWord oldKW) {

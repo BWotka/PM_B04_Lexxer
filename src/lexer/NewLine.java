@@ -1,5 +1,7 @@
 package lexer;
 
+import java.util.regex.Pattern;
+
 @Prio(value = 3)
 /** @author Benedikt Wotka */
 public class NewLine extends Token {
@@ -7,7 +9,8 @@ public class NewLine extends Token {
   private String content;
 
   public NewLine() {
-    super("^\\n");
+    super();
+    pattern = Pattern.compile("^\\n");
   }
 
   public NewLine(NewLine oldNL) {
