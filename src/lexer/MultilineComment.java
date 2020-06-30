@@ -3,7 +3,7 @@ package lexer;
 public class MultilineComment extends Token {
 
   public MultilineComment() {
-    super("/\\*([^*]|[\\r\\n]|(\\*+([^*/]|[\\r\\n])))*\\*+/");
+    super("/\\*(.|[\\r\\n])*?\\*/");
   }
 
   @Override
