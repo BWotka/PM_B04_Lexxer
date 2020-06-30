@@ -25,7 +25,8 @@ public class Starter {
     Logger lexLog = Logger.getLogger("LexLogging");
 
     // path of token classes
-    File folder = new File("./src");
+    //File folder = new File("./src");
+    File folder = new File(".\\Ordner_ausserhalb\\bin");
     URL[] ua = new URL[] {folder.toURI().toURL()};
     URLClassLoader ucl = URLClassLoader.newInstance(ua);
 
