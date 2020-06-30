@@ -15,11 +15,7 @@ import java.util.logging.Logger;
 
 import lexer.Catch_All;
 import lexer.Prio;
-/**
- * 
- * @author Benedikt Wotka, David Nickel
- *
- */
+/** @author Benedikt Wotka, David Nickel */
 public class Starter {
   public static void main(String[] args)
       throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
@@ -87,7 +83,7 @@ public class Starter {
     }
 
     List<Token> tokensFromString = new ArrayList<>();
-    tokensFromString = lexer.tokenize("//test \n hallo void");
+    tokensFromString = lexer.tokenize("protected //test \n //hallo \n void");
     for (Token t : tokensFromString) {
       System.out.print(t.getContent() + "|");
     }
