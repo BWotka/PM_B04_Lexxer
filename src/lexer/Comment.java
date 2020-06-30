@@ -1,14 +1,17 @@
 package lexer;
 
-public class Comment extends Token{
-    private String content;
-    @Override
-    protected Token getToken() {
-        return null;
-    }
+public class Comment extends Token {
+  public Comment() {
+    super("//.*$");
+  }
 
-    @Override
-    protected String getContent() {
-        return content;
-    }
+  @Override
+  protected Token getToken() {
+    return this;
+  }
+
+  @Override
+  protected String getContent() {
+    return super.content;
+  }
 }

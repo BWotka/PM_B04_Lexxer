@@ -1,14 +1,18 @@
 package lexer;
 
-public class KeyWord extends Token{
-    private String content;
-    @Override
-    protected Token getToken() {
-        return null;
-    }
+public class KeyWord extends Token {
 
-    @Override
-    protected String getContent() {
-        return content;
-    }
+  public KeyWord() {
+    super("(public|private|protected|abstract|void)");
+  }
+
+  @Override
+  protected Token getToken() {
+    return this;
+  }
+
+  @Override
+  protected String getContent() {
+    return super.content;
+  }
 }

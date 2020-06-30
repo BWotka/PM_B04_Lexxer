@@ -1,14 +1,20 @@
 package lexer;
 
-public class StringContent extends Token{
-    private String content;
-    @Override
-    protected Token getToken() {
-        return null;
-    }
+import java.util.regex.Pattern;
 
-    @Override
-    protected String getContent() {
-        return content;
-    }
+public class StringContent extends Token {
+
+  public StringContent() {
+    super(" (([\"|\']).*\\1)?");
+  }
+
+  @Override
+  protected Token getToken() {
+    return this;
+  }
+
+  @Override
+  protected String getContent() {
+    return super.content;
+  }
 }

@@ -1,14 +1,19 @@
 package lexer;
 
-public class MultilineComment extends Token{
-    private String content;
-    @Override
-    protected Token getToken() {
-        return null;
-    }
+public class MultilineComment extends Token {
 
-    @Override
-    protected String getContent() {
-        return content;
-    }
+  public MultilineComment() {
+    super("\/\*.*\*\/");
+  }
+
+  @Override
+  protected Token getToken() {
+    return this;
+  }
+
+  @Override
+  protected String getContent() {
+    return super.content;
+  }
+
 }

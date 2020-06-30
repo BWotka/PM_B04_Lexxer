@@ -1,15 +1,18 @@
 package lexer;
 
-public class NewLine extends Token{
-    private String content;
+public class NewLine extends Token {
 
-    @Override
-    protected Token getToken() {
-        return null;
-    }
+  public NewLine() {
+    super("\\n");
+  }
 
-    @Override
-    protected String getContent() {
-        return content;
-    }
+  @Override
+  protected Token getToken() {
+    return this;
+  }
+
+  @Override
+  protected String getContent() {
+    return super.content;
+  }
 }

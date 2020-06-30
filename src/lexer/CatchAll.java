@@ -1,14 +1,19 @@
 package lexer;
 
-public class CatchAll extends Token{
-    private String content;
-    @Override
-    protected Token getToken() {
-        return null;
-    }
+public class CatchAll extends Token {
+  private String content;
 
-    @Override
-    protected String getContent() {
-        return content;
-    }
+  public CatchAll() {
+    super(".");
+  }
+
+  @Override
+  protected Token getToken() {
+    return this;
+  }
+
+  @Override
+  protected String getContent() {
+    return super.content;
+  }
 }
