@@ -10,8 +10,6 @@ public abstract class Token {
   protected Matcher matcher;
   Logger lexerLog;
 
-  protected String content;
-
   public Token(String regExp) {
     pattern = Pattern.compile(regExp);
     lexerLog = Logger.getLogger("LexLogging");
@@ -21,7 +19,7 @@ public abstract class Token {
     matcher = pattern.matcher(matchString);
     if (matcher.find()) {
 
-      content = matcher.group();
+      this.setContent(matcher.group());
       lexerLog.info("Token for " + matcher.group() + " was found.");
       // Matcher erstellt und abgespeichert, Token erstellt und abgespeichert
 

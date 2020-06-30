@@ -4,13 +4,15 @@ package lexer;
 /** @author Benedikt Wotka */
 public class NewLine extends Token {
 
+  private String content;
+
   public NewLine() {
     super("^\\n");
   }
 
   public NewLine(NewLine oldNL) {
     this();
-    super.content = oldNL.getContent();
+    content = oldNL.getContent();
   }
 
   @Override
@@ -22,7 +24,7 @@ public class NewLine extends Token {
 
   @Override
   protected String getContent() {
-    return super.content;
+    return content;
   }
 
   @Override

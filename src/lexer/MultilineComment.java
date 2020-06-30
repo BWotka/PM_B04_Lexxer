@@ -4,13 +4,15 @@ package lexer;
 /** @author Benedikt Wotka */
 public class MultilineComment extends Token {
 
+  private String content;
+
   public MultilineComment() {
     super("^/\\*(.|[\\r\\n])*?\\*/");
   }
 
   public MultilineComment(MultilineComment oldMCom) {
     this();
-    super.content = oldMCom.getContent();
+    content = oldMCom.getContent();
   }
 
   @Override
@@ -22,7 +24,7 @@ public class MultilineComment extends Token {
 
   @Override
   protected String getContent() {
-    return super.content;
+    return content;
   }
 
   @Override

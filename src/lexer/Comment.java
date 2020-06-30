@@ -3,13 +3,15 @@ package lexer;
 @Prio(value = 1)
 /** @author Benedikt Wotka */
 public class Comment extends Token {
+  private String content;
+
   public Comment() {
     super("^//.*($|\\n)");
   }
 
   public Comment(Comment oldCom) {
     this();
-    super.content = oldCom.getContent();
+    content = oldCom.getContent();
   }
 
   @Override
@@ -21,7 +23,7 @@ public class Comment extends Token {
 
   @Override
   protected String getContent() {
-    return super.content;
+    return content;
   }
 
   @Override

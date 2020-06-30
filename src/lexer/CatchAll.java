@@ -11,7 +11,7 @@ public class CatchAll extends Token {
 
   public CatchAll(CatchAll oldCA) {
     this();
-    super.content = oldCA.getContent();
+    content = oldCA.getContent();
   }
 
   @Override
@@ -23,7 +23,7 @@ public class CatchAll extends Token {
 
   @Override
   protected String getContent() {
-    return super.content;
+    return content;
   }
 
   @Override

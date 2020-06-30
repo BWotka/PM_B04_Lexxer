@@ -1,10 +1,10 @@
 package lexer;
 
-import java.security.Key;
-
 @Prio(value = 2)
 /** @author Benedikt Wotka */
 public class KeyWord extends Token {
+
+  private String content;
 
   public KeyWord() {
     super("^(public|private|protected|abstract|void)");
@@ -12,7 +12,7 @@ public class KeyWord extends Token {
 
   public KeyWord(KeyWord oldKW) {
     this();
-    super.content = oldKW.getContent();
+    content = oldKW.getContent();
   }
 
   @Override
@@ -24,7 +24,7 @@ public class KeyWord extends Token {
 
   @Override
   protected String getContent() {
-    return super.content;
+    return content;
   }
 
   @Override
