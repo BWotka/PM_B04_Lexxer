@@ -26,4 +26,9 @@ public class StringContent extends Token {
   protected String getContent() {
     return super.content;
   }
+
+  @Override
+  protected void setContent(String pcontent) {
+    content = pcontent;
+  }
 }

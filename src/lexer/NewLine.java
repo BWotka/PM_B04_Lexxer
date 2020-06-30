@@ -1,11 +1,7 @@
 package lexer;
 
 @Prio(value = 3)
-/**
- * 
- * @author Benedikt Wotka
- *
- */
+/** @author Benedikt Wotka */
 public class NewLine extends Token {
 
   public NewLine() {
@@ -27,5 +23,10 @@ public class NewLine extends Token {
   @Override
   protected String getContent() {
     return super.content;
+  }
+
+  @Override
+  protected void setContent(String pcontent) {
+    content = pcontent;
   }
 }

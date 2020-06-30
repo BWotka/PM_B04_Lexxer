@@ -1,11 +1,7 @@
 package lexer;
 
 @Catch_All
-/**
- * 
- * @author Benedikt Wotka
- *
- */
+/** @author Benedikt Wotka */
 public class CatchAll extends Token {
   private String content;
 
@@ -28,5 +24,10 @@ public class CatchAll extends Token {
   @Override
   protected String getContent() {
     return super.content;
+  }
+
+  @Override
+  protected void setContent(String pcontent) {
+    content = pcontent;
   }
 }

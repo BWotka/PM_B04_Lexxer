@@ -4,11 +4,7 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * 
- * @author Benedikt Wotka
- *
- */
+/** @author Benedikt Wotka */
 public abstract class Token {
   protected Pattern pattern;
   protected Matcher matcher;
@@ -38,4 +34,6 @@ public abstract class Token {
   protected abstract Token getToken();
 
   protected abstract String getContent();
+
+  protected abstract void setContent(String pcontent);
 }

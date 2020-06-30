@@ -3,11 +3,7 @@ package lexer;
 import java.security.Key;
 
 @Prio(value = 2)
-/**
- * 
- * @author Benedikt Wotka
- *
- */
+/** @author Benedikt Wotka */
 public class KeyWord extends Token {
 
   public KeyWord() {
@@ -29,5 +25,10 @@ public class KeyWord extends Token {
   @Override
   protected String getContent() {
     return super.content;
+  }
+
+  @Override
+  protected void setContent(String pcontent) {
+    content = pcontent;
   }
 }
