@@ -2,12 +2,12 @@ package lexer;
 
 import java.util.regex.Pattern;
 
-@Prio(value = 1)
 /**
- * High priority token, recognizes multi line comments
+ * High priority token, recognizes multi line comments.
  *
  * @author Benedikt Wotka
  */
+@Prio(value = 1)
 public class MultilineComment extends Token {
 
   private String content;
@@ -18,7 +18,7 @@ public class MultilineComment extends Token {
   }
 
   /**
-   * Copy Constructor, creates a new Token with the same values
+   * Copy Constructor, creates a new Token with the same values.
    *
    * @param oldMCom original Token
    */

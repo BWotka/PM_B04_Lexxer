@@ -2,12 +2,12 @@ package lexer;
 
 import java.util.regex.Pattern;
 
-@Prio(value = 2)
 /**
- * medium priority token, recognizes typical java keywords
+ * medium priority token, recognizes typical java keywords.
  *
  * @author Benedikt Wotka
  */
+@Prio(value = 2)
 public class KeyWord extends Token {
 
   private String content;
@@ -18,7 +18,7 @@ public class KeyWord extends Token {
   }
 
   /**
-   * Copy Constructor, creates a new Token with the same values
+   * Copy Constructor, creates a new Token with the same values.
    *
    * @param oldKW original Token
    */

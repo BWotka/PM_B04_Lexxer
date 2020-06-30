@@ -2,12 +2,12 @@ package lexer;
 
 import java.util.regex.Pattern;
 
-@Prio(value = 1)
 /**
- * High priority token, recognizes single line comments
+ * High priority token, recognizes single line comments.
  *
  * @author Benedikt Wotka
  */
+@Prio(value = 1)
 public class Comment extends Token {
   private String content;
 
@@ -17,7 +17,7 @@ public class Comment extends Token {
   }
 
   /**
-   * Copy Constructor, creates a new Token with the same values
+   * Copy Constructor, creates a new Token with the same values.
    *
    * @param oldCom original Token
    */

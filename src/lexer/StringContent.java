@@ -2,12 +2,12 @@ package lexer;
 
 import java.util.regex.Pattern;
 
-@Prio(value = 2)
 /**
- * medium priority token, recognizes string content
+ * medium priority token, recognizes string content.
  *
  * @author Benedikt Wotka
  */
+@Prio(value = 2)
 public class StringContent extends Token {
 
   private String content;
@@ -18,7 +18,7 @@ public class StringContent extends Token {
   }
 
   /**
-   * Copy Constructor, creates a new Token with the same values
+   * Copy Constructor, creates a new Token with the same values.
    *
    * @param oldSC original Token
    */

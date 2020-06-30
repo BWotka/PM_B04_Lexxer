@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 import lexer.Catch_All;
 import lexer.Prio;
 /**
- * Setup Class to start the lexer
+ * Setup Class to start the lexer.
  *
  * @author Benedikt Wotka, David Nickel
  */

@@ -2,12 +2,12 @@ package lexer;
 
 import java.util.regex.Pattern;
 
-@Catch_All
 /**
- * Low priority token, used when no other token matches
+ * Low priority token, used when no other token matches.
  *
  * @author Benedikt Wotka
  */
+@Catch_All
 public class CatchAll extends Token {
   private String content;
 
@@ -17,7 +17,7 @@ public class CatchAll extends Token {
   }
 
   /**
-   * Copy Constructor, creates a new Token with the same values
+   * Copy Constructor, creates a new Token with the same values.
    *
    * @param oldCA original Token
    */
