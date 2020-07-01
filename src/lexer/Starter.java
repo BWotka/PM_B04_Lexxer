@@ -83,7 +83,7 @@ public class Starter {
     }
 
     List<Token> tokensFromString = new ArrayList<>();
-    tokensFromString = lexer.tokenize("// prima kommentar public \n protected 'test'");
+    tokensFromString = lexer.tokenize("test protected 'hallo' \n /* test public \n hallo */");
 
     // '|' can be removed, only used to show end of tokens
     for (Token t : tokensFromString) {
