@@ -20,6 +20,7 @@
                encoding="utf-8"/>
     </target>
     <target name="run" depends="compiletoken,compile">
+        <echo message="Vor java"></echo>
         <java classpath=".\out\production\PM_B04_Lexxer" classname="lexer.Starter" fork="true">
 
         </java>
