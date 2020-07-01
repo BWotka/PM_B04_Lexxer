@@ -4,7 +4,7 @@
         <mkdir dir=".\..\Token_Klassen\out\production\Token_Klassen\lexer"></mkdir>
     </target>
     <target name="compiletoken" depends="tokeninit">
-        <javac classpath="." srcdir=".\..\Token_Klasses\src"
+        <javac classpath="." srcdir=".\..\Token_Klassen\src"
                destdir=".\..\Token_Klassen\out\production\Token_Klassen\"
                encoding="utf-8"
                includeantruntime="false">
@@ -20,7 +20,7 @@
                encoding="utf-8"/>
     </target>
     <target name="run" depends="compiletoken,compile">
-        <java dir=".\out\production\PM_B04_Lexxer\" classname="lexer.Starter">
+        <java classpath=".\out\production\PM_B04_Lexxer" classname="lexer.Starter" fork="true">
 
         </java>
     </target>
