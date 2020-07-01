@@ -20,7 +20,11 @@
                encoding="utf-8"/>
     </target>
     <target name="run" depends="compiletoken,compile">
+<<<<<<< HEAD
         <java classpath=".\out\production\PM_B04_Lexxer\" classname="lexer.Starter" fork="true">
+=======
+        <java classpath=".\out\production\PM_B04_Lexxer" classname="lexer.Starter" fork="true">
+>>>>>>> branch 'master' of https://github.com/BWotka/PM_B04_Lexxer.git
 
         </java>
     </target>
