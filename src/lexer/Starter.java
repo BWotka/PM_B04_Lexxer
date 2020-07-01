@@ -1,20 +1,14 @@
 package lexer;
 
 import java.io.File;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
-
-import lexer.Catch_All;
-import lexer.Prio;
 /**
  * Setup Class to start the lexer.
  *
@@ -29,7 +23,7 @@ public class Starter {
     Logger lexLog = Logger.getLogger("LexLogging");
 
     // path of token classes
-    //File folder = new File("./src");
+    // File folder = new File("./src");
     File folder = new File(".\\Ordner_ausserhalb\\bin");
     URL[] ua = new URL[] {folder.toURI().toURL()};
     URLClassLoader ucl = URLClassLoader.newInstance(ua);
