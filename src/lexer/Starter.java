@@ -24,7 +24,8 @@ public class Starter {
 
     // path of token classes
     // File folder = new File("./src");
-    File folder = new File(".\\Ordner_ausserhalb\\bin");
+    File folder = new File(".\\..\\Token_Klassen\\src");
+    System.out.println(folder.getAbsolutePath());
     URL[] ua = new URL[] {folder.toURI().toURL()};
     URLClassLoader ucl = URLClassLoader.newInstance(ua);
 
@@ -83,6 +84,8 @@ public class Starter {
 
     List<Token> tokensFromString = new ArrayList<>();
     tokensFromString = lexer.tokenize("// prima kommentar public \n protected 'test'");
+
+    // '|' can be removed, only used to show end of tokens
     for (Token t : tokensFromString) {
       System.out.print(t.getContent() + "|");
     }

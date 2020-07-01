@@ -12,7 +12,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * @author David Nickel
  */
 @Retention(RUNTIME)
-@Target(ElementType.TYPE) // kann nicht nur bei Klassendeklarationen genutzt werden.
+@Target(ElementType.TYPE)
 public @interface Prio {
   int value() default 1;
 }

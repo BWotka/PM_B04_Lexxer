@@ -1,0 +1,29 @@
+<project name="Kompilieren token und lexer ordner" default="run" basedir=".">
+    <target name="tokeninit">
+        <delete dir=".\..\Token_Klassen\out\production\Token_Klassen\lexer"></delete>
+        <mkdir dir=".\..\Token_Klassen\out\production\Token_Klassen\lexer"></mkdir>
+    </target>
+    <target name="compiletoken" depends="tokeninit">
+        <javac classpath="." srcdir=".\..\Token_Klasses\src"
+               destdir=".\..\Token_Klassen\out\production\Token_Klassen\"
+               encoding="utf-8"
+               includeantruntime="false">
+
+        </javac>
+    </target>
+    <target name="init">
+        <delete dir="out\production\PM_B04_Lexxer\lexer"></delete>
+        <mkdir dir="out\production\PM_B04_Lexxer\lexer"></mkdir>
+    </target>
+    <target name="compile" depends="init">
+        <javac srcdir="src" destdir="out\production\PM_B04_Lexxer\" classpath="." includeantruntime="false"
+               encoding="utf-8"/>
+    </target>
+    <target name="run" depends="compiletoken,compile">
+        <java dir=".\out\production\PM_B04_Lexxer\" classname="lexer.Starter">
+
+        </java>
+    </target>
+
+
+</project>
