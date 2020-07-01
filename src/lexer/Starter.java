@@ -24,7 +24,7 @@ public class Starter {
 
     // path of token classes
     // File folder = new File("./src");
-    File folder = new File(".\\..\\Token_Klassen\\src");
+    File folder = new File(".\\..\\Token_Klassen\\out\\production\\Token_Klassen");
     System.out.println(folder.getAbsolutePath());
     URL[] ua = new URL[] {folder.toURI().toURL()};
     URLClassLoader ucl = URLClassLoader.newInstance(ua);
